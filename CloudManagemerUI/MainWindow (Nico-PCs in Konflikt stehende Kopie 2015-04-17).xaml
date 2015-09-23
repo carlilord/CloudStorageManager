@@ -1,0 +1,58 @@
+﻿<Controls:MetroWindow x:Class="CloudManagemerUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Cloud Manager" Height="350" Width="525"
+        WindowStartupLocation="CenterScreen"
+        GlowBrush="{DynamicResource AccentColorBrush}">
+    
+    
+    
+    <Controls:MetroWindow.LeftWindowCommands>
+    <Controls:WindowCommands>
+        <Button Name="Options" Content="Options" HorizontalAlignment="Left" Click="Options_Click"/>
+        
+    </Controls:WindowCommands>
+    </Controls:MetroWindow.LeftWindowCommands>
+
+    <Controls:MetroWindow.Flyouts>
+        
+        <Controls:FlyoutsControl>
+            
+            <Controls:Flyout Header="About" Position="Right" Name="Flyout">
+
+            </Controls:Flyout>
+
+        </Controls:FlyoutsControl>
+        
+    </Controls:MetroWindow.Flyouts>
+    
+    
+
+
+    <Grid>
+        
+        <StackPanel  Orientation="Horizontal">
+            
+            <TabControl>
+                
+                <TabItem Header="Overview"/>
+            
+            </TabControl>
+
+        </StackPanel>
+        
+        <Button Name="btnAbout" Click="btnAbout_Click" HorizontalAlignment="Right" VerticalAlignment="Center">
+            About
+        </Button>
+        
+        
+        
+        <StatusBar Name="Status" VerticalAlignment="Bottom">
+            Bereit
+        </StatusBar>
+
+        
+
+    </Grid>
+</Controls:MetroWindow>

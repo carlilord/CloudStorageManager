@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+    <EntitySetMapping Name="CloudManagers">
+      <EntityTypeMapping TypeName="DatabaseModel.CloudManager">
+        <MappingFragment StoreEntitySet="CloudManager">
+          <ScalarProperty Name="File_ID" ColumnName="File_ID" />
+          <ScalarProperty Name="Cloud_ID" ColumnName="Cloud_ID" />
+          <ScalarProperty Name="File_Name" ColumnName="File_Name" />
+          <ScalarProperty Name="File_Path" ColumnName="File_Path" />
+          <ScalarProperty Name="File_LastChanged" ColumnName="File_LastChanged" />
+          <ScalarProperty Name="File_IsDeleted" ColumnName="File_IsDeleted" />
+          <ScalarProperty Name="IsFolder" ColumnName="IsFolder" />
+          <ScalarProperty Name="File_IsInRoot" ColumnName="File_IsInRoot" />
+          <ScalarProperty Name="RootFolderPath" ColumnName="RootFolderPath" />
+          <ScalarProperty Name="Cloud_Path" ColumnName="Cloud_Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

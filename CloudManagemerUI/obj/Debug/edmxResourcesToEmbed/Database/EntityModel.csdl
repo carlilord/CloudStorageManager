@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CloudManager">
+    <Key>
+      <PropertyRef Name="File_ID" />
+    </Key>
+    <Property Name="File_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cloud_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="File_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="File_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="File_LastChanged" Type="DateTime" Precision="3" />
+    <Property Name="File_IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="IsFolder" Type="Boolean" Nullable="false" />
+    <Property Name="File_IsInRoot" Type="Boolean" Nullable="false" />
+    <Property Name="RootFolderPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cloud_Path" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CloudManagers" EntityType="Self.CloudManager" />
+  </EntityContainer>
+</Schema>

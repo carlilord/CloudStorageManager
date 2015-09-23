@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CloudManager">
+    <Key>
+      <PropertyRef Name="File_ID" />
+    </Key>
+    <Property Name="File_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cloud_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="File_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="File_Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="File_LastChanged" Type="datetime" />
+    <Property Name="File_IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="IsFolder" Type="bit" Nullable="false" />
+    <Property Name="File_IsInRoot" Type="bit" Nullable="false" />
+    <Property Name="RootFolderPath" Type="nvarchar(max)" />
+    <Property Name="Cloud_Path" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="CloudManager" EntityType="Self.CloudManager" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

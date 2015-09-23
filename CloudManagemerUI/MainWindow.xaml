@@ -1,0 +1,309 @@
+﻿<Controls:MetroWindow x:Class="CloudManagerUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mscorlib="clr-namespace:System;assembly=mscorlib"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Cloud Manager" Height="400" Width="700" HorizontalAlignment="Right" Name="title"
+        WindowStartupLocation="CenterScreen"
+        ShowIconOnTitleBar="True"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        Icon="./Resources/Icon.ico">
+
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="Margin" Value="2 2 2 2"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Margin" Value="7 2 2 2"/>
+            <Setter Property="FontSize" Value="12"/>
+
+        </Style>
+
+        <ResourceDictionary x:Key="FlatButton" Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+
+        <ControlTemplate TargetType="Button" x:Key="ButtonStyle">
+            <Border Name="border"
+               BorderThickness="1"
+               Padding="4,2"
+               BorderBrush="DarkGray"
+               Background="{TemplateBinding Background}">
+                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Content="{TemplateBinding Content}" />
+            </Border>
+
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="border" Property="BorderBrush" Value="Blue" />
+                    <Setter Property="Foreground" Value="Black" />
+                </Trigger>
+
+                <Trigger Property="IsPressed"  Value="True">
+                    <Setter Property="Background" Value="#00000000">
+                    </Setter>
+                    <Setter Property="RenderTransform" >
+                        <Setter.Value>
+                            <TranslateTransform Y="1" />
+                        </Setter.Value>
+                    </Setter>
+
+                </Trigger>
+
+            </ControlTemplate.Triggers>
+
+        </ControlTemplate>
+
+
+    </Window.Resources>
+
+
+    <Controls:MetroWindow.IconTemplate>
+        <DataTemplate>
+            <Grid Width="{TemplateBinding Width}"
+                 Height="{TemplateBinding Height}"
+                 Margin="4"
+                 Background="White"
+                 RenderOptions.EdgeMode="Aliased"
+                 RenderOptions.BitmapScalingMode="HighQuality">
+
+                <Image Source="C:\Users\Nico\HTLCloudManager\Dropbox\nico\CloudManagemerUI\CloudManagemerUI\icon.png" Stretch="Uniform" Visibility="Visible"/>
+
+
+            </Grid>
+        </DataTemplate>
+    </Controls:MetroWindow.IconTemplate>
+
+
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Name="btnAbout" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White" Click="btnAbout_Click">
+                About
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+
+
+    <Controls:MetroWindow.Flyouts>
+
+        <Controls:FlyoutsControl>
+
+            <Controls:Flyout Position="Right" Name="Flyout">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Margin="10 00" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    Cloud Storage Management Software for Multiple Cloud Services
+                    </TextBlock>
+                    <TextBlock Margin="1 20 1 0" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold">
+                        Developers:
+                    </TextBlock>
+
+                    <TextBlock Margin="1 10 1 0" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        Engetsberger Nico
+                    </TextBlock>
+                    <TextBlock Margin="1 00" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        Spindler Michael
+                    </TextBlock>
+                    <TextBlock Margin="1 00" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        Weilguny Carl
+                    </TextBlock>
+                </StackPanel>
+
+
+            </Controls:Flyout>
+
+        </Controls:FlyoutsControl>
+
+    </Controls:MetroWindow.Flyouts>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="0.31*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.05*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.05*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock Margin="6,3,0,0" Name="GoogleDriveHeading" FontWeight="Thin" FontSize="30" FontFamily="helvetica ultra thin" Grid.Row="0" Grid.Column="0" TextAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Center" Text="GoogleDrive" Height="36"  />
+        <TextBlock Margin="6,3,0,0" Name="DropboxHeading" FontWeight="Thin" FontSize="30" FontFamily="helvetica ultra thin" Grid.Row="0" Grid.Column="2" TextAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Dropbox" Height="36"  />
+        <TextBlock Margin="6,3,0,0" Name="OneDriveHeading" FontWeight="Thin" FontSize="30" FontFamily="helvetica ultra thin" Grid.Row="0" Grid.Column="4" TextAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Center" Text="OneDrive" Height="36"  />
+
+        <StatusBar Name="Status" VerticalAlignment="Bottom" Grid.Row="2" Height="22" Margin="0 0 0 0" Grid.ColumnSpan="5">
+            Ok
+        </StatusBar>
+
+        <Grid Grid.Row="1" Grid.Column="4" Margin="10 0 10 0">
+
+            <DockPanel  VerticalAlignment="Stretch">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3" >
+                        <StackPanel Orientation="Vertical">
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left">Status</Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Image  Source="{Binding ImageSourceOneDrive}" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="7 2 2 2"/>
+                                <TextBlock Text="{Binding OneDriveStatus,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Bottom" TextAlignment="Left"  FontFamily="helvetica ultra thin" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel  Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center" >
+                            <Button  Focusable="False" Template="{StaticResource ButtonStyle}" Resources="{StaticResource FlatButton}"  Margin="5 0 5 0" Background="#CC119EDA" Foreground="White" Command="{Binding Btn_LogInOutOneDrive}" Content="{Binding BtnTextOneDrive}" Width="60" VerticalAlignment="Center" Height="30" HorizontalAlignment="Right" />
+                        </StackPanel>
+
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3" >
+                        <StackPanel Orientation="Vertical">
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left">Account Name</Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Image  Source="{Binding ImageSourceOneDrive}" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="7 2 2 2"/>
+                                <TextBlock Text="{Binding OneDriveAccountName,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left"  FontFamily="helvetica ultra thin" />
+                            </StackPanel>
+                        </StackPanel>
+
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3">
+                        <StackPanel>
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left">E-Mail</Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Image  Source="{Binding ImageSourceOneDrive}" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="7 2 2 2"/>
+                                <TextBlock Text="{Binding OneDriveEmail,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left"  FontFamily="helvetica ultra thin" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3">
+                        <StackPanel>
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="4" >Storage</Label>
+                            <Controls:MetroProgressBar >
+                                <Controls:MetroProgressBar.Template>
+                                    <ControlTemplate TargetType="ProgressBar">
+                                        <Grid>
+                                            <Controls:MetroProgressBar Minimum="{Binding ProgressMin}" Maximum="{Binding ProgressMax}" BorderBrush="{Binding ProgressBarBorderBrushOneDrive}" Background="White" Foreground="{Binding ProgressBarForegroundOneDrive}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="30"  Value="{Binding ProgressValueOneDrive}" BorderThickness="2" FlowDirection="LeftToRight" />
+                                            <TextBlock Text="{Binding OneDriveStorage}" Foreground="#FF119EDA" FontSize="12" Margin="35 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Controls:MetroProgressBar.Template>
+                            </Controls:MetroProgressBar>
+                        </StackPanel>
+                    </DockPanel>
+                </DockPanel>
+            </DockPanel>
+        </Grid>
+
+        <Rectangle VerticalAlignment="Stretch" HorizontalAlignment="Center" Fill="DarkGray" Width="1" Grid.Column="1" Grid.RowSpan="2" StrokeThickness="2" Margin="0 3 0 3"/>
+
+        <Grid Grid.Row="1" Grid.Column="2" Margin="10 0 10 0">
+            <DockPanel   VerticalAlignment="Stretch">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3" >
+                        <StackPanel Orientation="Vertical">
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left">Status</Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Image  Source="{Binding ImageSourceDropbox}" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="7 2 2 2"/>
+                                <TextBlock Text="{Binding DropboxStatus,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Bottom" TextAlignment="Left"  FontFamily="helvetica ultra thin" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel  Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center" >
+                            <Button  Focusable="False" Template="{StaticResource ButtonStyle}" Resources="{StaticResource FlatButton}" Background="#CC119EDA" Foreground="White" Margin="5 0 5 0"  Command="{Binding Btn_LogInOutDropbox}" Content="{Binding BtnTextDropbox}" Width="60" VerticalAlignment="Center" Height="30" HorizontalAlignment="Right" />
+                        </StackPanel>
+
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3" >
+                        <StackPanel Orientation="Vertical">
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left">Account Name</Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Image  Source="{Binding ImageSourceDropbox}" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="7 2 2 2"/>
+                                <TextBlock Text="{Binding DropboxAccountName,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left"  FontFamily="helvetica ultra thin" />
+                            </StackPanel>
+                        </StackPanel>
+
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3">
+                        <StackPanel>
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left">E-Mail</Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Image  Source="{Binding ImageSourceDropbox}" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="7 2 2 2"/>
+                                <TextBlock Text="{Binding DropboxEmail,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left"  FontFamily="helvetica ultra thin" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3">
+                        <StackPanel>
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="4" >Storage</Label>
+                            <Controls:MetroProgressBar >
+                                <Controls:MetroProgressBar.Template>
+                                    <ControlTemplate TargetType="ProgressBar">
+                                        <Grid>
+                                            <Controls:MetroProgressBar Minimum="{Binding ProgressMin}" Maximum="{Binding ProgressMax}" BorderBrush="{Binding ProgressBarBorderBrushDropbox}" Background="White" Foreground="{Binding ProgressBarForegroundDropbox}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="30"  Value="{Binding ProgressValueDropbox}" BorderThickness="2" FlowDirection="LeftToRight" />
+                                            <TextBlock Text="{Binding DropboxStorage}" Foreground="#FF119EDA" FontSize="12" Margin="35 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Controls:MetroProgressBar.Template>
+                            </Controls:MetroProgressBar>
+                        </StackPanel>
+                    </DockPanel>
+                </DockPanel>
+            </DockPanel>
+        </Grid>
+
+        <Rectangle VerticalAlignment="Stretch" HorizontalAlignment="Center" Fill="DarkGray" Width="1" Grid.Column="3" Grid.RowSpan="2" StrokeThickness="2" Margin="0 3 0 3"/>
+
+        <Grid Grid.Row="1" Grid.Column="0" Margin="10 0 10 0">
+            <DockPanel  Grid.Column="1"  VerticalAlignment="Stretch">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3" >
+                        <StackPanel Orientation="Vertical">
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left">Status</Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Image  Source="{Binding ImageSourceGoogleDrive}" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="7 2 2 2"/>
+                                <TextBlock Text="{Binding GoogleDriveStatus,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Bottom" TextAlignment="Left"  FontFamily="helvetica ultra thin" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel  Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center" >
+                            <Button  Focusable="False" Template="{StaticResource ButtonStyle}" Resources="{StaticResource FlatButton}" Background="#CC119EDA" Foreground="White" Margin="5 0 5 0"  Command="{Binding Btn_LogInOutGoogleDrive}" Content="{Binding BtnTextGoogleDrive}" Width="60" VerticalAlignment="Center" Height="30" HorizontalAlignment="Right" />
+                        </StackPanel>
+
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3" >
+                        <StackPanel Orientation="Vertical">
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left">Account Name</Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Image  Source="{Binding ImageSourceGoogleDrive}" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="7 2 2 2"/>
+                                <TextBlock Text="{Binding GoogleDriveAccountName,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left"  FontFamily="helvetica ultra thin" />
+                            </StackPanel>
+                        </StackPanel>
+
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3">
+                        <StackPanel>
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left">E-Mail</Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Image  Source="{Binding ImageSourceGoogleDrive}" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="7 2 2 2"/>
+                                <TextBlock Text="{Binding GoogleDriveEmail,Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left"  FontFamily="helvetica ultra thin" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" Margin="0 3 0 3">
+                        <StackPanel>
+                            <Label VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="4" >Storage</Label>
+                            <Controls:MetroProgressBar >
+                                <Controls:MetroProgressBar.Template>
+                                    <ControlTemplate TargetType="ProgressBar">
+                                        <Grid>
+                                            <Controls:MetroProgressBar Minimum="{Binding ProgressMin}" Maximum="{Binding ProgressMax}" BorderBrush="{Binding ProgressBarBorderBrushGoogleDrive}" Background="White" Foreground="{Binding ProgressBarForegroundGoogleDrive}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="30"  Value="{Binding ProgressValueGoogleDrive}" BorderThickness="2" FlowDirection="LeftToRight" />
+                                            <TextBlock Text="{Binding GoogleDriveStorage}" Foreground="#FF119EDA" FontSize="12" Margin="35 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Controls:MetroProgressBar.Template>
+                            </Controls:MetroProgressBar>
+                        </StackPanel>
+                    </DockPanel>
+                </DockPanel>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Controls:MetroWindow>
