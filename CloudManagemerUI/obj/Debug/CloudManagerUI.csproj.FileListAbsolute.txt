@@ -308,3 +308,6 @@ C:\Users\Nico\Source\Repos\CloudStorageManager\CloudManagemerUI\obj\Debug\CloudM
 C:\Users\Nico\Documents\GitHubVisualStudio\CloudStorageManager\CloudManagemerUI\bin\Debug\CloudManagemerUI.exe.config
 C:\Users\Nico\Documents\GitHubVisualStudio\CloudStorageManager\CloudManagemerUI\obj\Debug\CloudManagemerUI.exe
 C:\Users\Nico\Documents\GitHubVisualStudio\CloudStorageManager\CloudManagemerUI\obj\Debug\CloudManagemerUI.pdb
+C:\Users\Nico\Documents\GitHubVisualStudio\CloudStorageManagementSoftware\CloudManagemerUI\bin\Debug\CloudManagemerUI.exe.config
+C:\Users\Nico\Documents\GitHubVisualStudio\CloudStorageManagementSoftware\CloudManagemerUI\obj\Debug\CloudManagemerUI.exe
+C:\Users\Nico\Documents\GitHubVisualStudio\CloudStorageManagementSoftware\CloudManagemerUI\obj\Debug\CloudManagemerUI.pdb
