@@ -10,7 +10,7 @@ namespace CloudManagerUI.Communication
 {
     class CallbackHandler : IFilesDuplexCallback
     {
-        public event Action<string[]> ReceivedList = delegate { };
+        public event Action<string[]> ReceivedList = delegate { };//hallo
 
         public void Equals(string[] result)
         {
