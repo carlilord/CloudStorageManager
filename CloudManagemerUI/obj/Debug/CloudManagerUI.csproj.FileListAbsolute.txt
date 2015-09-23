@@ -302,3 +302,9 @@ C:\Users\Nico\Google Drive\AHELS10\Projekte\CloudManager\nico\CloudManagemerUIWC
 C:\Users\Nico\Google Drive\AHELS10\Projekte\CloudManager\nico\CloudManagemerUIWCF\CloudManagemerUI\obj\Debug\CloudManagemerUI.g.resources
 C:\Users\Nico\Google Drive\AHELS10\Projekte\CloudManager\nico\CloudManagemerUIWCF\CloudManagemerUI\obj\Debug\CloudManagerUI.Properties.Resources.resources
 C:\Users\Nico\Google Drive\AHELS10\Projekte\CloudManager\nico\CloudManagemerUIWCF\CloudManagemerUI\obj\Debug\CloudManagerUI.csproj.GenerateResource.Cache
+C:\Users\Nico\Source\Repos\CloudStorageManager\CloudManagemerUI\bin\Debug\CloudManagemerUI.exe.config
+C:\Users\Nico\Source\Repos\CloudStorageManager\CloudManagemerUI\obj\Debug\CloudManagemerUI.exe
+C:\Users\Nico\Source\Repos\CloudStorageManager\CloudManagemerUI\obj\Debug\CloudManagemerUI.pdb
+C:\Users\Nico\Documents\GitHubVisualStudio\CloudStorageManager\CloudManagemerUI\bin\Debug\CloudManagemerUI.exe.config
+C:\Users\Nico\Documents\GitHubVisualStudio\CloudStorageManager\CloudManagemerUI\obj\Debug\CloudManagemerUI.exe
+C:\Users\Nico\Documents\GitHubVisualStudio\CloudStorageManager\CloudManagemerUI\obj\Debug\CloudManagemerUI.pdb
