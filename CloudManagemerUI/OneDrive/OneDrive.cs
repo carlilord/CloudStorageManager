@@ -12,7 +12,7 @@ namespace CloudManagerUI
     class OneDriveClass
     {
         public delegate void LoginFinishedDelegate(AuthResult result);
-        public event LoginFinishedDelegate loginFinished;                       //#commit
+        public event LoginFinishedDelegate loginFinished;                       //#commitz
 
         public delegate void LogoutFinishedDelegate();
         public event LogoutFinishedDelegate logoutFinished;
